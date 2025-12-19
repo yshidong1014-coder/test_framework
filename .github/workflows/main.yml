@@ -1,0 +1,55 @@
+name: Playwright API Tests
+
+# 触发条件：当你推送到 main 分支时
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  api-test:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 系统
+
+    steps:
+      # 1. 把代码从仓库里拉取下来
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. 安装 Python 3.10
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      # 3. 安装依赖包 (根据购物清单)
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. 关键一步：安装 Playwright 对应的浏览器内核
+      - name: Install Playwright Browsers
+        run: playwright install chromium
+
+      # 5. 运行测试
+      # 注意：continue-on-error: true 表示即使测试挂了，也要继续往下走(为了生成报告)
+      - name: Run Tests
+        run: pytest -s --alluredir=allure-results
+        continue-on-error: true
+
+      # 6. 生成 Allure 报告 (使用第三方 Action)
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_report: allure-report
+
+      # 7. 把报告发布到 GitHub Pages
+      - name: Deploy Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report
