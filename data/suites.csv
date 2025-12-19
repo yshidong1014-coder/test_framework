@@ -1,4 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","13","test_get_booking_framework","","Fri Dec 19 05:33:28 UTC 2025","passed","Fri Dec 19 05:33:28 UTC 2025","","test_framework","",""
-"","17","测试用例: 名字={firstname}, 价格={totalprice}","","Fri Dec 19 05:33:28 UTC 2025","passed","Fri Dec 19 05:33:28 UTC 2025","","test_framework","",""
-"","11","test_delete_booking_framework","","Fri Dec 19 05:33:28 UTC 2025","passed","Fri Dec 19 05:33:28 UTC 2025","","test_framework","",""
+"","0","测试用例: 名字={firstname}, 价格={totalprice}","","Fri Dec 19 06:08:19 UTC 2025","broken","Fri Dec 19 06:08:19 UTC 2025","","test_framework","",""
+"","0","test_get_booking_framework","","Fri Dec 19 06:08:19 UTC 2025","broken","Fri Dec 19 06:08:19 UTC 2025","","test_framework","",""
+"","0","test_delete_booking_framework","","Fri Dec 19 06:08:19 UTC 2025","broken","Fri Dec 19 06:08:19 UTC 2025","","test_framework","",""
