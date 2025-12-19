@@ -87,8 +87,8 @@ def test_get_booking_framework(booking_service, active_booking_id):
 def test_delete_booking_framework(booking_service, active_booking_id):
     # 这里我们手动删除，验证删除功能
     res = booking_service.delete_booking(booking_id=active_booking_id)
-    assert res.status_code == 201
+    assert res.status == 201
     
     # 验证确实删除了
     get_res = booking_service.get_booking(booking_id=active_booking_id)
-    assert get_res.status_code == 404
+    assert get_res.status == 404
