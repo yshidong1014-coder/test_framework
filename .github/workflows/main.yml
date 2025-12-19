@@ -30,7 +30,7 @@ jobs:
 
       # 4. 关键一步：安装 Playwright 对应的浏览器内核
       - name: Install Playwright Browsers
-        run: playwright install chromium
+        run: python -m playwright install --with-deps chromium
 
       # 5. 运行测试
       # 注意：continue-on-error: true 表示即使测试挂了，也要继续往下走(为了生成报告)
