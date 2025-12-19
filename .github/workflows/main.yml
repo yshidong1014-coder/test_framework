@@ -35,7 +35,9 @@ jobs:
       # 5. 运行测试
       # 注意：continue-on-error: true 表示即使测试挂了，也要继续往下走(为了生成报告)
       - name: Run Tests
-        run: pytest -s --alluredir=allure-results
+        run: |
+          export PYTHONPATH=$PYTHONPATH:.
+          pytest -s --alluredir=allure-results
         continue-on-error: true
 
       # 6. 生成 Allure 报告 (使用第三方 Action)
