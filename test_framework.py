@@ -1,4 +1,5 @@
 # test_framework.py
+import allure
 import pytest
 from playwright.sync_api import Playwright
 from api_objects.booking_api import BookingApi  # 引入我们封装好的类
@@ -22,6 +23,8 @@ def booking_service(playwright: Playwright):
     context.dispose()
 
 # --- 测试用例 ---
+@allure.feature("架构模式更改测试")
+@allure.title("测试用例: 名字={firstname}, 价格={totalprice}")
 def test_update_booking_framework(booking_service):
     # 准备数据
     data = {
@@ -41,16 +44,15 @@ def test_update_booking_framework(booking_service):
     # 验证
     assert res.ok
     assert res.json()["firstname"] == "Framework"
-    print("架构模式更改测试通过！")
 
+
+@allure.feature("架构模式获取测试")
 def test_get_booking_framework(booking_service):
     res = booking_service.get_booking(booking_id=1)
     assert res.ok
-    get_data = res.json()
-    print(f"获取到的数据：{get_data}")
-    print("架构模式获取测试通过！")
 
+
+@allure.feature("架构模式删除测试")
 def test_delete_booking_framework(booking_service):
     res = booking_service.delete_booking(booking_id=1, token=booking_service.token)
     assert res.ok
-    print("架构模式删除测试通过！")
