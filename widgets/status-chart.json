@@ -1,1 +1,1 @@
-[]
+[{"uid":"d5831e7f472bc6ef","name":"test_update_booking_framework","time":{"start":1766114822656,"stop":1766114822656,"duration":0},"status":"broken","severity":"normal"},{"uid":"e910b1280727bed1","name":"test_delete_booking_framework","time":{"start":1766114822672,"stop":1766114822672,"duration":0},"status":"broken","severity":"normal"},{"uid":"a497fa19fe39b60d","name":"test_get_booking_framework","time":{"start":1766114822670,"stop":1766114822670,"duration":0},"status":"broken","severity":"normal"}]

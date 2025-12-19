@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","0","test_update_booking_framework","","Fri Dec 19 03:27:02 UTC 2025","broken","Fri Dec 19 03:27:02 UTC 2025","","test_framework","",""
+"","0","test_delete_booking_framework","","Fri Dec 19 03:27:02 UTC 2025","broken","Fri Dec 19 03:27:02 UTC 2025","","test_framework","",""
+"","0","test_get_booking_framework","","Fri Dec 19 03:27:02 UTC 2025","broken","Fri Dec 19 03:27:02 UTC 2025","","test_framework","",""
