@@ -28,8 +28,8 @@ class BookingApi(BaseApi):
     # 鉴权：登录方法
     def login(self, username, password):
         # ⚡️ 新增：使用自定义加密算法
-        encrypted_password = self._encrypt_password(password)
-        payload = {"username": username, "password": encrypted_password}
+        # encrypted_password = self._encrypt_password(password)
+        payload = {"username": username, "password": password}
         response = self.post("/auth", data=payload)
         return response
 
