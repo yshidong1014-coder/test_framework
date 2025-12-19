@@ -1,0 +1,1 @@
+[![Playwright API Tests](https://github.com/yshidong1014-coder/test_framework/actions/workflows/main.yml/badge.svg)](https://github.com/yshidong1014-coder/test_framework/actions/workflows/main.yml)
